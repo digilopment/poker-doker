@@ -52,6 +52,7 @@ use Dnt3\App\Poker\Game;
         } else {
             $this->game->addTemplate('default', $this->game->finalData);
         }
+        $this->game->render();
     }
 
     protected function test()

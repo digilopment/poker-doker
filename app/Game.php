@@ -18,6 +18,24 @@ class Game
         $this->config = $config;
     }
 
+    public function minify($html)
+    {
+
+        $search = array(
+            '/\>[^\S ]+/s', // strip whitespaces after tags, except space
+            '/[^\S ]+\</s', // strip whitespaces before tags, except space
+            '/(\s)+/s', // shorten multiple whitespace sequences
+            '/<!--(.|\s)*?-->/' // Remove HTML comments
+        );
+        $replace = array(
+            '>',
+            '<',
+            '\\1',
+            ''
+        );
+        return preg_replace($search, $replace, $html);
+    }
+
     public function players()
     {
         return $this->config['players'];
@@ -25,7 +43,15 @@ class Game
 
     public function addTemplate($tpl, $data)
     {
+        ob_start();
         include 'templates/' . $tpl . '.php';
+        $html = ob_get_clean();
+        $this->html = $this->minify($html);
+    }
+
+    public function render()
+    {
+        print($this->html);
     }
 
     public function lap($i)
