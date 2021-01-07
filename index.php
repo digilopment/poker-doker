@@ -1,6 +1,6 @@
 <?php
 
-namespace Index;
+namespace Dnt3\PokerDoker;
 
 use Dnt3\App\Poker\Game;
 
