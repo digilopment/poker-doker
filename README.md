@@ -16,17 +16,22 @@ Poker Doker je PHP aplikácia (hra), ktorá vygeneruje n hier pre n hráčov pre
 
 ## Inštalácia
 
-Git clone
+### Git
 
 ```bash
 git clone https://tomas-doubek@bitbucket.org/digilopment/poker-doker.git ./poker-doker
-```
-http://localhost/poker-doker
 
-Docker
+otvor http://localhost/poker-doker
+```
+
+### Docker Compose
 
 ```bash
-#TO DO
+git clone https://tomas-doubek@bitbucket.org/digilopment/poker-doker.git ./poker-doker
+cd poker-doker
+docker-compose up
+
+otvor http://localhost/poker-doker
 ```
 
 ## Použitie GET parametrov
@@ -34,4 +39,3 @@ Docker
 - **rounds** => (int) nastaví počet kôl turnaja, default => RAND(), ak nie je konfigurácia striktne definovaná v JSON-e
 - **mod** => (int) nastaví mód hry, default => 1, ak nie je konfigurácia striktne definovaná v JSON-e
 - **file** => (string) načíta konfiguračný súbor s hráčmi v **json/{file}.json**, default => 'default' 
-
