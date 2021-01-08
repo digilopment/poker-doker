@@ -31,7 +31,7 @@ Docker
 
 ## Použitie GET parametrov
 
-- **rounds** => (int) nastaví počet kôl turnaja, default => RAND()
-- **mod** => (int) nastaví mód hry, default => 1
+- **rounds** => (int) nastaví počet kôl turnaja, default => RAND(), ak nie je konfigurácia striktne definovaná v JSON-e
+- **mod** => (int) nastaví mód hry, default => 1, ak nie je konfigurácia striktne definovaná v JSON-e
 - **file** => (string) načíta konfiguračný súbor s hráčmi v **json/{file}.json**, default => 'default' 
 

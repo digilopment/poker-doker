@@ -1,0 +1,21 @@
+{
+    "players": [
+        {
+            "name": "Kubko"
+        },
+        {
+            "name": "Miško"
+        },
+        {
+            "name": "Roomsterko"
+        },
+        {
+            "name": "Tomadžo"
+        },
+        {
+            "name": "Tony"
+        }
+    ],
+    "small_blind": 10,
+    "budget": 250
+}
