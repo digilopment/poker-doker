@@ -1,0 +1,18 @@
+{
+    "players": [
+        {
+            "name": "Vlado"
+        },
+        {
+            "name": "Ondrej"
+        },
+        {
+            "name": "Lulco"
+        }, 
+        {
+            "name": "Tomas"
+        }
+    ],
+    "small_blind": 10,
+    "budget": 250
+}

@@ -27,20 +27,16 @@ use Dnt3\App\Poker\Game;
 
     public function config()
     {
-        $this->config = [
-            'players' => [
-                ['name' => 'Tomas'],
-                ['name' => 'Tmax'],
-                ['name' => 'Lubo'],
-                ['name' => 'Botor'],
-                ['name' => 'Partak'],
-                ['name' => 'PohodaDoma'],
-            ],
-            'rounds' => $this->setParam('rounds'),
-            'small_blind' => 10,
-            'budget' => 250,
-            'game_mod' => $this->setParam('game_mod')
-        ];
+        $file = $this->setParam('file');
+        $confFile = 'json/default.json';
+        if (file_exists('json/' . $file . '.json')) {
+            $confFile = 'json/' . $file . '.json';
+        }
+        $config = file_get_contents($confFile);
+        $this->config = json_decode($config, true);
+
+        $this->config['rounds'] = isset($this->config['rounds']) ? $this->config['rounds'] : $this->setParam('rounds');
+        $this->config['game_mod'] = isset($this->config['game_mod']) ? $this->config['game_mod'] : $this->setParam('rounds');
     }
 
     public function play()

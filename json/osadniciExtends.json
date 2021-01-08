@@ -1,0 +1,26 @@
+{
+    "players": [
+        {
+            "name": "Tomas"
+        },
+        {
+            "name": "Tmax"
+        },
+        {
+            "name": "Lubo"
+        },
+        {
+            "name": "Botor"
+        },
+        {
+            "name": "Partak"
+        },
+        {
+            "name": "PohodaDoma"
+        }
+    ],
+    "rounds": 32,
+    "small_blind": 10,
+    "budget": 250,
+    "game_mod": 1
+}
