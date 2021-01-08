@@ -31,7 +31,7 @@ git clone https://tomas-doubek@bitbucket.org/digilopment/poker-doker.git ./poker
 cd poker-doker
 docker-compose up
 
-otvor http://localhost/poker-doker
+otvor http://172.18.0.2/ alebo http://localhost:8001/
 ```
 
 ## Použitie GET parametrov
