@@ -11,7 +11,7 @@ Poker Doker je PHP aplikácia (hra), ktorá vygeneruje n hier pre n hráčov pre
 - zobrazené **karty hráča**
 - zobrazené **karty na stole**
 - zobrazené takzvané **"piate karty"** to sú karty, ktoré pri rovnosti figúry a súčasne bodovej rovnosti rozhodnú o **poradí v danom kole**
-- počítanie **poradia hráčov v danom kole** (pri rovnosti figúry, bodov v danej figúry a takzvaných piatych kariet sa kľudne stať, že kolo bude mať dvoch víťazov, to isté platí aj pre poradie na nižžších miestach v rankingu)
+- počítanie **poradia hráčov v danom kole** (pri rovnosti figúry, bodov v danej figúry a takzvaných piatych kariet sa môže stať, že jedno kolo bude mať dvoch víťazov, to isté platí aj pre poradie na nižších miestach v rankingu)
 - **poradie hráčov v turnaji** po N kolách
 
 ## Inštalácia
