@@ -1,0 +1,8 @@
+#BUILD AND PUSH
+sudo docker build -t digilopment/poker-doker . 
+sudo docker login --username=digilopment
+sudo docker push digilopment/poker-doker:latest
+
+#PULL AND RUN NEW IMAGE
+sudo docker pull digilopment/poker-doker:latest
+sudo docker run digilopment/poker-doker
