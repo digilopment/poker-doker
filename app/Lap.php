@@ -1,8 +1,8 @@
 <?php
 
-namespace Dnt3\App\Poker;
+namespace Dnt3\PokerDoker\App;
 
-use Dnt3\App\Poker\Figures;
+use Dnt3\PokerDoker\App\Figures;
 
 class Lap
 {

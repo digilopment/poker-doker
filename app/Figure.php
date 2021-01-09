@@ -1,6 +1,6 @@
 <?php
 
-namespace Dnt3\App\Poker;
+namespace Dnt3\PokerDoker\App;
 
 class Figure
 {

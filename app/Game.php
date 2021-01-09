@@ -1,9 +1,9 @@
 <?php
 
-namespace Dnt3\App\Poker;
+namespace Dnt3\PokerDoker\App;
 
-use Dnt3\App\Poker\Cards;
-use Dnt3\App\Poker\Lap;
+use Dnt3\PokerDoker\App\Cards;
+use Dnt3\PokerDoker\App\Lap;
 
 class Game
 {

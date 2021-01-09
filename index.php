@@ -2,7 +2,7 @@
 
 namespace Dnt3\PokerDoker;
 
-use Dnt3\App\Poker\Game;
+use Dnt3\PokerDoker\App\Game;
 
 (new class
 {
