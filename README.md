@@ -21,8 +21,8 @@ Poker Doker je PHP aplikácia (hra), ktorá vygeneruje n hier pre n hráčov pre
 ```bash
 git clone https://tomas-doubek@bitbucket.org/digilopment/poker-doker.git ./poker-doker
 
-otvor http://localhost/poker-doker
 ```
+otvor localhost so smerovaním do rootu **http://localhost/poker-doker**
 
 ### Docker Compose
 
@@ -30,9 +30,16 @@ otvor http://localhost/poker-doker
 git clone https://tomas-doubek@bitbucket.org/digilopment/poker-doker.git ./poker-doker
 cd poker-doker
 docker-compose up
-
-otvor http://172.18.0.2/ alebo http://localhost:8001/
 ```
+otvor adresu z konzoly, pravdepodobne **http://172.18.0.2** alebo **http://localhost:8001**
+
+### Docker Pull
+
+```bash
+docker pull digilopment/poker-doker:latest
+docker run digilopment/poker-doker
+```
+otvor adresu z konzoly, pravdepodobne **http://172.18.0.2**
 
 ## Použitie GET parametrov
 
