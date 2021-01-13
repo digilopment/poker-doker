@@ -24,7 +24,7 @@ $dataCard['cardTplEmpty'] = function() {
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-        <meta name="viewport" content="width=1200, initial-scale=0.35">
+        <meta name="viewport" content="width=1200, initial-scale=0.3">
         <style>
             body{
                 margin: 0px auto;
@@ -60,7 +60,7 @@ $dataCard['cardTplEmpty'] = function() {
                 color: #fff;
             }
             .board tr.round:nth-child(even){
-                 background-color: #079b07;
+                background-color: #079b07;
             }
             .board tr.title{
                 font-weight: bold;
@@ -322,17 +322,17 @@ $dataCard['cardTplEmpty'] = function() {
                 <tr>
                     <td></td>
                     <td>
-                        <b><?php echo $i ?></b><?php echo $subfix ?> place
+                        <h3><b><?php echo $i ?></b><?php echo $subfix ?> place</h3>
                     </td>
                     <td>
-                        <?php echo $data[$roundId]['config']['players'][$playerId]['name'] ?>
+                        <h3><?php echo $data[$roundId]['config']['players'][$playerId]['name'] ?></h3>
                     </td>
                     <td>
                     </td>
                     <td>
                     </td>
                     <td>
-                        <?php echo $points; ?> points
+                        <h3><?php echo $points; ?> points</h3>
                     </td>
                 </tr>
             <?php } ?>
@@ -366,17 +366,17 @@ $dataCard['cardTplEmpty'] = function() {
                 <tr>
                     <td></td>
                     <td>
-                        <b><?php echo $i ?></b><?php echo $subfix ?> place
+                        <h3><b><?php echo $i ?></b><?php echo $subfix ?> place</h3>
                     </td>
                     <td>
-                        <?php echo $data[$roundId]['config']['players'][$playerId]['name'] ?>
+                        <h3><?php echo $data[$roundId]['config']['players'][$playerId]['name'] ?></h3>
                     </td>
                     <td>
                     </td>
                     <td>
                     </td>
                     <td>
-                        <?php echo $data[$roundId]['config']['players'][$playerId]['budget'] ?> €
+                        <h3><?php echo $data[$roundId]['config']['players'][$playerId]['budget'] ?> €</h3>
                     </td>
                 </tr>
             <?php } ?>
