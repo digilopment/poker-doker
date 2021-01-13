@@ -266,7 +266,7 @@ $dataCard['cardTplEmpty'] = function() {
                                             if ($figures['final_stand'][$playerId]['order'] == 1) {
                                                 $counterWinner[$playerId]++;
                                             }
-                                            if ($figures['config']['players'][$playerId]['budget'] == 1200) {
+                                            if ($figures['config']['players'][$playerId]['budget'] == count($data[0]['config']['players']) * $data[0]['config']['budget']) {
                                                 if (!$budgetAfterRounds) {
                                                     $budgetAfterRounds = $roundId;
                                                 }
