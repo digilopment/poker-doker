@@ -1,0 +1,15 @@
+{
+    "players": [
+        {
+            "name": "Cmúčik"
+        },
+        {
+            "name": "Púčik"
+        },
+        {
+            "name": "Láskikvet"
+        }
+    ],
+    "small_blind": 10,
+    "budget": 250
+}

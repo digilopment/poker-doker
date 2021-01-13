@@ -10,6 +10,6 @@
             "name": "Player 3"
         }
     ],
-    "small_blind": 10,
-    "budget": 250
+    "small_blind": 100,
+    "budget": 400
 }

@@ -86,9 +86,16 @@ $dataCard['cardTplEmpty'] = function() {
 
     </head>
     <body>
-        &nbsp;Playing on <?php echo $data[0]['config']['rounds'] ?> rounds<br/>
+        <h3>
+        &nbsp;Playing on rounds: <?php echo $data[0]['config']['rounds'] ?><br/>
+        &nbsp;Budget per player: <?php echo $data[0]['config']['budget'] ?>€<br/>
+        &nbsp;Blind:  <?php echo $data[0]['config']['small_blind'] ?>€<br/>
+        &nbsp;Number of players:  <?php echo count($data[0]['config']['players']) ?><br/><br/>
+        &nbsp;Game progress:
+        </h3>
         <table class="board">
             <tr>
+                <td>Round</td>
                 <td>Cards on hand</td>
                 <td>Cards on table</td>
                 <td>Highest Figure</td>
@@ -96,13 +103,17 @@ $dataCard['cardTplEmpty'] = function() {
                 <td>Figure Name</td>
                 <td>Player order<br/> in round</td>
                 <td>Gained points</td>
-                <!--<td>Fifth Card</td>-->
+                <td>Budget</td>
+<!--<td>Fifth Card</td>-->
             </tr>
             <?php
             $counterWinner = [];
+            $counterBudget = [];
             foreach ($data[1]['cards']['players'] as $playerId => $player) {
                 $counterWinner[$playerId] = 0;
+                $counterBudget[$playerId] = 0;
             }
+            $budgetAfterRounds = 0;
             foreach ($rounds as $roundId => $round) {
                 if ($roundId > 0) {
                     $figures = $data[$roundId];
@@ -111,6 +122,14 @@ $dataCard['cardTplEmpty'] = function() {
                     ?>
                     <tr class="round">
                         <!-- PLAYERS -->
+                        <td>
+                            <table>
+                                <tr>
+                                    <?php echo $roundId; ?>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
                         <td>
                             <table>
                                 <?php foreach ($players as $playerId => $player) { ?>
@@ -205,8 +224,27 @@ $dataCard['cardTplEmpty'] = function() {
                                             if ($figures['final_stand'][$playerId]['order'] == 1) {
                                                 $counterWinner[$playerId]++;
                                             }
+                                            if ($figures['config']['players'][$playerId]['budget'] == 1200) {
+                                                if (!$budgetAfterRounds) {
+                                                    $budgetAfterRounds = $roundId;
+                                                }
+                                            }
                                             echo $counterWinner[$playerId];
                                             ?>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                            </table>
+                        </td>
+
+                        <td>
+                            <table>
+                                <?php
+                                foreach ($players as $playerId => $player) {
+                                    ?>
+                                    <tr>
+                                        <td class="status">
+                                            <?php print($figures['config']['players'][$playerId]['budget']); ?>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -215,6 +253,11 @@ $dataCard['cardTplEmpty'] = function() {
                     </tr>
                 <?php } ?>
             <?php } ?>
+            <tr>
+                <td colspan="5" align="center">
+                    <h3>Overall standing on POINTS (status after <?php echo $data[0]['config']['rounds'] ?> rounds)</h3>
+                </td>
+            </tr>
             <?php
             $finalOrder = [];
             foreach ($players as $playerId => $player) {
@@ -247,6 +290,49 @@ $dataCard['cardTplEmpty'] = function() {
                     </td>
                     <td>
                         <?php echo $points; ?> points
+                    </td>
+                </tr>
+            <?php } ?>
+
+
+            <tr>
+                <td colspan="5" align="center">
+                    <h3>Overall standing on BUDGET (status after <?php echo $data[0]['config']['rounds'] ?> rounds)</h3>
+                    <h4><?php echo ($budgetAfterRounds > 0) ? 'Final winner was defined after ' . $budgetAfterRounds . 'rounds' : 'no final winner defined' ?></h4>
+                </td>
+            </tr>
+            <?php
+            $finalOrder = [];
+            foreach ($players as $playerId => $player) {
+                $finalOrder[$playerId] = $data[$roundId]['config']['players'][$playerId]['budget'];
+            }
+            arsort($finalOrder);
+            $i = 0;
+            foreach ($finalOrder as $playerId => $points) {
+                $i++;
+                if ($i == 1) {
+                    $subfix = 'st';
+                } elseif ($i == 2) {
+                    $subfix = 'nd';
+                } elseif ($i == 3) {
+                    $subfix = 'rd';
+                } else {
+                    $subfix = 'th';
+                }
+                ?>
+                <tr>
+                    <td>
+                        <b><?php echo $i ?></b><?php echo $subfix ?> place
+                    </td>
+                    <td>
+                        <?php echo $data[$roundId]['config']['players'][$playerId]['name'] ?>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <?php echo $data[$roundId]['config']['players'][$playerId]['budget'] ?> €
                     </td>
                 </tr>
             <?php } ?>

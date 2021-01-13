@@ -1,15 +1,15 @@
 {
     "players": [
         {
-            "name": "Tomas"
-        },
-        {
-            "name": "Tmax"
+            "name": "Andy"
         },
         {
             "name": "Lubo"
+        },
+        {
+            "name": "Tomáš"
         }
     ],
     "small_blind": 100,
-    "budget": 450
+    "budget": 250
 }
