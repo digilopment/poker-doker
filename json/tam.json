@@ -1,0 +1,12 @@
+{
+    "players": [
+        {
+            "name": "Magda"
+        },
+        {
+            "name": "Tomáš"
+        }
+    ],
+    "small_blind": 100,
+    "budget": 400
+}
