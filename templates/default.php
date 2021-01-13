@@ -24,6 +24,7 @@ $dataCard['cardTplEmpty'] = function() {
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=1100, initial-scale=0.35">
         <style>
             td.status{
                 height: 45px;
@@ -87,11 +88,13 @@ $dataCard['cardTplEmpty'] = function() {
     </head>
     <body>
         <h3>
-        &nbsp;Playing on rounds: <?php echo $data[0]['config']['rounds'] ?><br/>
-        &nbsp;Budget per player: <?php echo $data[0]['config']['budget'] ?>€<br/>
-        &nbsp;Blind:  <?php echo $data[0]['config']['small_blind'] ?>€<br/>
-        &nbsp;Number of players:  <?php echo count($data[0]['config']['players']) ?><br/><br/>
-        &nbsp;Game progress:
+
+            &nbsp;Playing on rounds: <?php echo $data[0]['config']['rounds'] ?><br/>
+            &nbsp;Number of players:  <?php echo count($data[0]['config']['players']) ?><br/>
+            &nbsp;Budget per player: <?php echo $data[0]['config']['budget'] ?>€<br/>
+            &nbsp;Blind:  <?php echo $data[0]['config']['small_blind'] ?>€<br/>
+            &nbsp;Jackpot:  <?php echo count($data[0]['config']['players']) * $data[0]['config']['budget'] ?>€<br/>
+            <br/>&nbsp;Game progress:
         </h3>
         <table class="board">
             <tr>
