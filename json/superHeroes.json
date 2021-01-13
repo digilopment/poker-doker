@@ -1,6 +1,9 @@
 {
     "players": [
         {
+            "name": "Engi"
+        },
+        {
             "name": "Kubko"
         },
         {
@@ -10,12 +13,16 @@
             "name": "Roomsterko"
         },
         {
+            "name": "Tomis"
+        },
+        {
             "name": "Tomadžo"
         },
         {
             "name": "Tony"
         }
     ],
-    "small_blind": 10,
-    "budget": 250
+    "small_blind": 95,
+    "budget": 250,
+    "rounds": "45,65"
 }

@@ -122,11 +122,11 @@ $dataCard['cardTplEmpty'] = function() {
 
             }
         </style>
-        <title>Poker</title>
+        <title>Poker Doker</title>
 
     </head>
     <body>
-        <h2 align="center">Poker Doker tournament</h2>
+        <h1 align="center">Poker Doker tournament</h1>
         <h3>
             &nbsp;Playing on rounds: <?php echo $data[0]['config']['rounds'] ?><br/>
             &nbsp;Number of players:  <?php echo count($data[0]['config']['players']) ?><br/>
@@ -146,7 +146,6 @@ $dataCard['cardTplEmpty'] = function() {
                 <td>Player order<br/> in round</td>
                 <td>Gained points</td>
                 <td>Budget</td>
-<!--<td>Fifth Card</td>-->
             </tr>
             <?php
             $counterWinner = [];
@@ -297,7 +296,7 @@ $dataCard['cardTplEmpty'] = function() {
             <?php } ?>
             <tr id="results">
                 <td colspan="6" align="center">
-                    <h3>Overall standing on POINTS (status after <?php echo $data[0]['config']['rounds'] ?> rounds)</h3>
+                    <h3>Overall standing in mode POINTS (status after <?php echo $data[0]['config']['rounds'] ?> rounds)</h3>
                 </td>
             </tr>
             <?php
@@ -340,7 +339,7 @@ $dataCard['cardTplEmpty'] = function() {
 
             <tr>
                 <td colspan="6" align="center">
-                    <h3>Overall standing on BUDGET (status after <?php echo $data[0]['config']['rounds'] ?> rounds)</h3>
+                    <h3>Overall standing in mode BUDGET (status after <?php echo $data[0]['config']['rounds'] ?> rounds)</h3>
                     <h4><?php echo ($budgetAfterRounds > 0) ? 'Final winner was defined after ' . $budgetAfterRounds . 'rounds' : 'no final winner defined' ?></h4>
                 </td>
             </tr>

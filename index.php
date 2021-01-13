@@ -27,7 +27,7 @@ use Dnt3\PokerDoker\App\Game;
 
     public function config()
     {
-        $file = $this->setParam('file');
+        $file = $this->setParam('conf');
         $confFile = 'json/default.json';
         if (file_exists('json/' . $file . '.json')) {
             $confFile = 'json/' . $file . '.json';
@@ -35,7 +35,12 @@ use Dnt3\PokerDoker\App\Game;
         $config = file_get_contents($confFile);
         $this->config = json_decode($config, true);
 
-        $this->config['rounds'] = isset($this->config['rounds']) ? $this->config['rounds'] : $this->setParam('rounds');
+        $rounds = isset($this->config['rounds']) ? $this->config['rounds'] : $this->setParam('rounds');
+        $this->config['rounds'] = $rounds;
+        $arr = explode(',', $rounds);
+        if (isset($arr[1])) {
+            $this->config['rounds'] = rand($arr[0], $arr[1]);
+        }
         $this->config['game_mod'] = isset($this->config['game_mod']) ? $this->config['game_mod'] : $this->setParam('rounds');
     }
 
